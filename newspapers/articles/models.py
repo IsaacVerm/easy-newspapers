@@ -1,3 +1,5 @@
+import datetime
+from django.utils import timezone
 from django.db import models
 
 
@@ -8,3 +10,6 @@ class Article(models.Model):
 
     def __str__(self):
         return self.title
+
+    def published_today(self):
+        return self.pub_date >= timezone.now() - datetime.timedelta(days=1)
