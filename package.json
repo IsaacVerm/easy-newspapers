@@ -1,0 +1,22 @@
+{
+  "name": "easy-newspapers",
+  "version": "1.0.0",
+  "description": "## virtual environment",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IsaacVerm/easy-newspapers.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IsaacVerm/easy-newspapers/issues"
+  },
+  "homepage": "https://github.com/IsaacVerm/easy-newspapers#readme",
+  "dependencies": {
+    "cypress": "^3.7.0"
+  }
+}

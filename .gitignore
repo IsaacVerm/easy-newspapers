@@ -1,4 +1,6 @@
 venv/
+node_modules/
+
 .vscode/
 newspapers/newspapers/__pycache__/
 newspapers/articles/__pycache__/
