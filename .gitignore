@@ -2,3 +2,4 @@ venv/
 .vscode/
 newspapers/newspapers/__pycache__/
 newspapers/articles/__pycache__/
+newspapers/articles/migrations/__pycache__/
