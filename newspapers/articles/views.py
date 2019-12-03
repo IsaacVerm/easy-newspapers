@@ -1,4 +1,4 @@
-from django.http import HttpResponse
+from django.shortcuts import render
 
 
 def index(request):
@@ -6,4 +6,4 @@ def index(request):
 
 
 def detail(request, article_id):
-    return HttpResponse("This is the article with id %s." % article_id)
+    return render(request, 'articles/detail.html')
