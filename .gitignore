@@ -1,2 +1,3 @@
 venv/
 .vscode/
+newspapers/newspapers/__pycache__/
