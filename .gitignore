@@ -1,7 +1,14 @@
+# libraries
 venv/
 node_modules/
 
+# vscode
 .vscode/
+
+# web app
 newspapers/newspapers/__pycache__/
 newspapers/articles/__pycache__/
 newspapers/articles/migrations/__pycache__/
+
+# cypress
+cypress/videos/
