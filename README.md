@@ -5,7 +5,7 @@
 Activate [environment](https://docs.python.org/3/tutorial/venv.html):
 
 ```
-source tutorial-env/bin/activate
+source venv/bin/activate
 ```
 
 Update package list:
@@ -18,4 +18,12 @@ Install packages:
 
 ```
 pip install -r requirements.txt
+```
+
+## deploy to Heroku
+
+To deploy push the latests changes to Heroku.
+
+```
+git heroku push master
 ```

@@ -6,9 +6,9 @@ node_modules/
 .vscode/
 
 # web app
-newspapers/newspapers/__pycache__/
-newspapers/articles/__pycache__/
-newspapers/articles/migrations/__pycache__/
+newspapers/__pycache__/
+articles/__pycache__/
+articles/migrations/__pycache__/
 
 # cypress
 cypress/videos/
