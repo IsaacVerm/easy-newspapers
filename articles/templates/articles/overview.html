@@ -1,9 +1,6 @@
 <h1>Krantenkoppen</h1>
 
-<table>
-    {% for article in articles %}
-        <tr>
-            <td>{{ article.title }}</td>
-        </tr>
-    {% endfor %}
-</table>
+{% for article in articles %}
+    <a href='{{article.guid}}''>{{ article.title }}</a>
+    <br>
+{% endfor %}

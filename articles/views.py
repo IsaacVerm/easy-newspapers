@@ -13,7 +13,6 @@ def latest_articles(request):
     feed = requests.get(
         'https://www.standaard.be/rss/section/1f2838d4-99ea-49f0-9102-138784c7ea7c')
     latest_articles = atoma.parse_rss_bytes(feed.content).items
-    print(latest_articles)
     context = {'articles': latest_articles}
     return render(request, 'articles/overview.html', context)
 

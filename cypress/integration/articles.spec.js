@@ -8,7 +8,8 @@ describe("articles", () => {
       .should("have.css", "font-size", "32px");
 
     cy.log("articles");
-    cy.get("table").should("exist");
-    cy.get("tr").should("have.length.greaterThan", 5);
+    cy.get("a")
+      .should("have.length.greaterThan", 5)
+      .should("have.attr", "href");
   });
 });
