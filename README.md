@@ -33,3 +33,9 @@ To deploy push the latests changes to Heroku.
 ```
 git heroku push master
 ```
+
+If you also want to to push at the same time run the deploy script.
+
+```
+./deploy.sh
+```
