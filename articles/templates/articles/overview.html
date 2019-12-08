@@ -1,6 +1,6 @@
 <h1>Krantenkoppen</h1>
 
 {% for article in articles %}
-    <a href='{{article.guid}}''>{{ article.title }}</a>
+    <a href='{{article.path}}''>{{ article.title }}</a>
     <br>
 {% endfor %}
