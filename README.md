@@ -39,3 +39,13 @@ If you also want to to push at the same time run the deploy script.
 ```
 ./deploy.sh
 ```
+
+## testing
+
+By default the Cypress `baseUrl` is set to the deployed version of the application. To override this you have to set an environment variable:
+
+```
+export CYPRESS_baseUrl=http://127.0.0.1:8000
+```
+
+Url above is the default one used by the Django local web server.
