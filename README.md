@@ -20,6 +20,12 @@ Install packages:
 pip install -r requirements.txt
 ```
 
+## run server
+
+```
+python manage.py runserver
+```
+
 ## deploy to Heroku
 
 To deploy push the latests changes to Heroku.
