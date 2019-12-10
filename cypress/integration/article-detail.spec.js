@@ -21,6 +21,6 @@ describe("article detail", () => {
   });
   it("save article", () => {
     cy.get('[data-cy="save_article_form"]').submit();
-    cy.url().should("contain", "feed");
+    cy.url().should("contain", "saved");
   });
 });

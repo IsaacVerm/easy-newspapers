@@ -56,4 +56,10 @@ def save(request):
                       pub_date=timezone.now())
     article.save()
 
-    return HttpResponseRedirect('/articles/feed')
+    return HttpResponseRedirect('/articles/saved')
+
+
+def saved(request):
+    articles = Article.objects.all()
+
+    return render(request, 'articles/saved.html', {'articles': articles})
