@@ -15,4 +15,8 @@ describe("articles detail", () => {
       .should("exist")
       .should("not.contain", "<P>");
   });
+  it("go back to articles feed", () => {
+    cy.get('[data-cy="feed_hyperlink"]').click();
+    cy.url().should("contain", "feed");
+  });
 });
