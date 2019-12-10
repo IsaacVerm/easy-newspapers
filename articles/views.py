@@ -51,8 +51,9 @@ def detail(request, article_path):
 
 
 def save(request):
-    article = Article(title="test title",
-                      description="test description", pub_date=timezone.now())
+    article = Article(title=request.POST['title'],
+                      description=request.POST['description'],
+                      pub_date=timezone.now())
     article.save()
 
     return HttpResponseRedirect('/articles/feed')
