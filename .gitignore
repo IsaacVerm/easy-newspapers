@@ -12,3 +12,4 @@ articles/migrations/__pycache__/
 
 # cypress
 cypress/videos/
+cypress/screenshots/
