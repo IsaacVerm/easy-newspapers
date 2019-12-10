@@ -22,5 +22,6 @@ describe("article detail", () => {
   it("save article", () => {
     cy.get('[data-cy="save_article_form"]').submit();
     cy.url().should("contain", "saved");
+    cy.get("a").should("contain", "Calvo over De Wever");
   });
 });

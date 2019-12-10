@@ -51,15 +51,30 @@ def detail(request, article_path):
 
 
 def save(request):
-    article = Article(title=request.POST['title'],
-                      description=request.POST['description'],
-                      pub_date=timezone.now())
-    article.save()
+    # get all saved articles
+    articles = Article.objects.all()
 
-    return HttpResponseRedirect('/articles/saved')
+    # check if article submitted for save exists already
+    submitted_title = request.POST['title']
+    submitted_description = request.POST['description']
+
+    existing_titles = list(
+        map(lambda article: article.title, Article.objects.all()))
+
+    # save article if it doesn't exist yet
+    if submitted_title not in existing_titles:
+        article = Article(title=submitted_title,
+                          description=submitted_description,
+                          pub_date=timezone.now())
+        article.save()
+
+    # display saved articles
+    return HttpResponseRedirect('/articles/saved', articles)
 
 
 def saved(request):
+    # get all saved articles
     articles = Article.objects.all()
 
+    # display saved articles
     return render(request, 'articles/saved.html', {'articles': articles})
