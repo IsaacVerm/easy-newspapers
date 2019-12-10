@@ -2,13 +2,11 @@
 
 <p>{{ article.description }}</p>
 
-<form action="/articles/article/save" method="post">
+<form data-cy="save_article_form" action="/articles/article/save" method="post">
     {% csrf_token %}    
-    <label for="title">Title:</label>
-    <input type="text" id="title" name="title" />
-    <label for="description">Description:</label>
-    <input type="text" id="description" name="description" />
-    <button type="submit">Save article</button>
+    <input type="hidden" type="text" id="title" name="title" value="{{ article.title }}"/>
+    <input type="hidden" type="text" id="description" name="description" value="{{ article.description }}"/>
+    <button type="submit">Save your article</button>
 </form>
 
 <a href="feed" data-cy="feed_hyperlink">Go back to articles feed</a>

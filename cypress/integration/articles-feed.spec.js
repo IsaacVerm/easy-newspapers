@@ -1,5 +1,5 @@
 describe("articles feed", () => {
-  before(() => {
+  beforeEach(() => {
     cy.visit("/articles/feed");
   });
 
