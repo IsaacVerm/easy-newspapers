@@ -11,6 +11,8 @@ describe("articles detail", () => {
       .should("have.css", "font-size", "32px");
 
     cy.log("description");
-    cy.get("p").should("exist");
+    cy.get("p")
+      .should("exist")
+      .should("not.contain", "<P>");
   });
 });

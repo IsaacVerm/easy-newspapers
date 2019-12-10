@@ -40,5 +40,9 @@ def detail(request, article_path):
     # get description article found
     lookup_article = articles[lookup_article_index]
 
+    # clean description article
+    lookup_article.description = lookup_article.description.replace(
+        "<P>", "").replace("</P>", "")
+
     # pass context to template
     return render(request, 'articles/detail.html', {'article': lookup_article})
