@@ -1,8 +1,10 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from .models import Article
 import requests
 import atoma
+
+from django.utils import timezone
 
 
 def index(request):
@@ -46,3 +48,11 @@ def detail(request, article_path):
 
     # pass context to template
     return render(request, 'articles/detail.html', {'article': lookup_article})
+
+
+def save(request):
+    article = Article(title="test title",
+                      description="test description", pub_date=timezone.now())
+    article.save()
+
+    return HttpResponseRedirect('/articles/feed')

@@ -2,4 +2,9 @@
 
 <p>{{ article.description }}</p>
 
+<form action="/articles/article/save" method="post">
+    {% csrf_token %}    
+    <button type="submit">Save article</button>
+</form>
+
 <a href="feed" data-cy="feed_hyperlink">Go back to articles feed</a>

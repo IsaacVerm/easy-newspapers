@@ -4,5 +4,6 @@ from . import views
 
 urlpatterns = [
     path('feed', views.feed, name='feed'),
-    path('<article_path>', views.detail, name='detail')
+    path('<article_path>', views.detail, name='detail'),
+    path('article/save', views.save, name='save')
 ]
