@@ -1,9 +1,9 @@
-describe("articles", () => {
+describe("articles feed", () => {
   before(() => {
-    cy.visit("/articles/ds/latest");
+    cy.visit("/articles/feed");
   });
 
-  it("open articles from newspaper feed", () => {
+  it("open articles feed", () => {
     cy.log("title");
     cy.get("h1")
       .should("contain", "Krantenkoppen")
@@ -15,7 +15,7 @@ describe("articles", () => {
       .should("have.attr", "href");
   });
 
-  it("open details article", () => {
+  it("open article detail", () => {
     cy.log("select first article");
     cy.get("a")
       .first()
