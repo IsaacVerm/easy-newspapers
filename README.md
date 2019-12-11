@@ -58,3 +58,13 @@ export CYPRESS_baseUrl=http://127.0.0.1:8000
 ```
 
 Url above is the default one used by the Django local web server.
+
+## secrets
+
+Secrets are handled with environment variables. The following environment variables have to be set:
+
+```
+export EMAIL_HOST_PASSWORD=gmail app password
+```
+
+Locally you do this with `export ENV_VAR="blablabla"`. On [Heroku](https://devcenter.heroku.com/articles/config-vars) use the `heroku config` command.

@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
+from django.core.mail import send_mail
 from .models import Article
 from django.utils import timezone
 import requests
@@ -79,3 +80,15 @@ def saved(request):
 
     # display saved articles
     return render(request, 'articles/saved.html', {'articles': articles})
+
+
+def mail(request):
+    send_mail(
+        request.POST.get('mail_title', False),
+        request.POST.get('mail_description', False),
+        'easy.newspapers.articles@gmail.com',
+        ['easy.newspapers.articles@gmail.com'],
+        fail_silently=False,
+    )
+
+    return render(request, 'articles/index.html')
