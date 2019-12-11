@@ -4,19 +4,12 @@ describe("articles feed", () => {
   });
 
   it("open articles feed", () => {
-    cy.log("title");
-    cy.get("h1")
-      .should("contain", "Krantenkoppen")
-      .should("have.css", "font-size", "54px");
+    cy.get("h1").should("have.css", "font-size", "54px");
 
-    cy.log("articles");
-    cy.get("a")
-      .should("have.length.greaterThan", 5)
-      .should("have.attr", "href");
+    cy.get("a").should("have.length.greaterThan", 5);
   });
 
   it("open article detail", () => {
-    cy.log("select first article");
     cy.get("a")
       .first()
       .invoke("text")
@@ -29,6 +22,12 @@ describe("articles feed", () => {
           .invoke("text")
           .should("eq", titleOverview);
       });
-    cy.get("p").should("exist");
+
+    cy.url().should("contain", "dmf");
+  });
+
+  it("go back to index", () => {
+    cy.get('[data-cy="back_to_index"]').click();
+    cy.url().should("match", /articles\/$/);
   });
 });

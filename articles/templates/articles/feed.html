@@ -3,6 +3,10 @@
 {% block content %}
     <h1>Krantenkoppen</h1>
 
+    <button data-cy="back_to_index" onclick="window.location.href = '/articles';">Ga terug naar hoofdpagina</button>
+    <br>
+    <br>
+
     {% for article in articles %}
         <a href='{{article.path}}''>{{ article.title }}</a>
         <br>
