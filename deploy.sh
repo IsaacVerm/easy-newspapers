@@ -1,7 +1,7 @@
 #!/bin/bash 
 
 # push to heroku
-git push heroku master
+git push -f heroku master
 
 # migrate database
 heroku run python manage.py makemigrations
