@@ -20,6 +20,15 @@ Install packages:
 pip install -r requirements.txt
 ```
 
+## models
+
+Update models in Django shell:
+
+```
+python manage.py makemigrations
+python manage.py migrate
+```
+
 ## run server
 
 ```

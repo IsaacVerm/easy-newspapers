@@ -6,6 +6,7 @@
     {% csrf_token %}    
     <input type="hidden" type="text" id="title" name="title" value="{{ article.title }}"/>
     <input type="hidden" type="text" id="description" name="description" value="{{ article.description }}"/>
+    <input type="hidden" type="text" id="path" name="path" value="{{ article.path }}"/>
     <button type="submit">Save your article</button>
 </form>
 

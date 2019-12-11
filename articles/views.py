@@ -57,6 +57,7 @@ def save(request):
     # check if article submitted for save exists already
     submitted_title = request.POST['title']
     submitted_description = request.POST['description']
+    submitted_path = request.POST['path']
 
     existing_titles = list(
         map(lambda article: article.title, Article.objects.all()))
@@ -64,8 +65,9 @@ def save(request):
     # save article if it doesn't exist yet
     if submitted_title not in existing_titles:
         article = Article(title=submitted_title,
-                          description=submitted_description,
-                          pub_date=timezone.now())
+                          path=submitted_path,
+                          pub_date=timezone.now(),
+                          description=submitted_description)
         article.save()
 
     # display saved articles
