@@ -2,7 +2,7 @@
 
 <p>{{ article.description }}</p>
 
-<form data-cy="save_article_form" action="/articles/article/save" method="post">
+<form data-cy="save_article_form" action="/articles/save" method="post">
     {% csrf_token %}    
     <input type="hidden" type="text" id="title" name="title" value="{{ article.title }}"/>
     <input type="hidden" type="text" id="description" name="description" value="{{ article.description }}"/>
