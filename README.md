@@ -31,8 +31,16 @@ python manage.py migrate
 
 ## run server
 
+Run server:
+
 ```
 python manage.py runserver
+```
+
+Get rid of all the data:
+
+```
+python manage.py flush
 ```
 
 ## deploy to Heroku
@@ -61,10 +69,14 @@ Url above is the default one used by the Django local web server.
 
 ## secrets
 
-Secrets are handled with environment variables. The following environment variables have to be set:
+Secrets are handled with environment variables. Locally environment variables are set like this:
 
 ```
 export EMAIL_HOST_PASSWORD=gmail app password
 ```
 
-Locally you do this with `export ENV_VAR="blablabla"`. On [Heroku](https://devcenter.heroku.com/articles/config-vars) use the `heroku config` command.
+On [Heroku](https://devcenter.heroku.com/articles/config-vars) use the `heroku config` command:
+
+```
+heroku config:set EMAIL_HOST_PASSWORD=gmail app password
+```
