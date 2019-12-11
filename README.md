@@ -69,14 +69,23 @@ Url above is the default one used by the Django local web server.
 
 ## secrets
 
-Secrets are handled with environment variables. Locally environment variables are set like this:
+Secrets are handled with environment variables. The following environment variables are defined:
+
+- EMAIL_HOST_PASSWORD
+- EMAIL_TO
+
+EMAIL_HOST_PASSWORD is the app password of the email used to send mails. Notice [Gmail security](https://stackoverflow.com/questions/26697565/django-smtpauthenticationerror) has increased so the regular password of the mail account won't be enough. Just enabling less secure apps as an option will still result in refusal by the gmail server. An app password can only be created if two-factor authentication is activated.
+
+EMAIL_TO is the email address you want to send mail to. There can only be one at a time.
+
+Locally environment variables are set like this:
 
 ```
-export EMAIL_HOST_PASSWORD=gmail app password
+export ENV_VAR=blabla
 ```
 
 On [Heroku](https://devcenter.heroku.com/articles/config-vars) use the `heroku config` command:
 
 ```
-heroku config:set EMAIL_HOST_PASSWORD=gmail app password
+heroku config:set ENV_VAR=blabla
 ```

@@ -5,6 +5,7 @@ from .models import Article
 from django.utils import timezone
 import requests
 import atoma
+import os
 
 
 def index(request):
@@ -87,7 +88,7 @@ def mail(request):
         request.POST.get('mail_title', False),
         request.POST.get('mail_description', False),
         'easy.newspapers.articles@gmail.com',
-        ['easy.newspapers.articles@gmail.com'],
+        [os.environ['EMAIL_TO']],
         fail_silently=False,
     )
 
