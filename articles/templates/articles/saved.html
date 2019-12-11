@@ -1,6 +1,10 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'articles/style.css' %}">
+
 <h1>Opgeslagen artikels</h1>
 
 {% for article in articles %}
     <a href="{{article.path}}">{{ article.title }}</a>
+    <br>
     <br>
 {% endfor %}

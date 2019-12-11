@@ -7,7 +7,9 @@ describe("articles saved", () => {
 
   it("open article detail", () => {
     cy.log("title");
-    cy.get("h1").should("contain", "Opgeslagen artikels");
+    cy.get("h1")
+      .should("contain", "Opgeslagen artikels")
+      .should("have.css", "font-size", "54px");
 
     cy.log("article detail");
     cy.get("a")

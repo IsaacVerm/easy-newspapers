@@ -7,7 +7,7 @@ describe("articles feed", () => {
     cy.log("title");
     cy.get("h1")
       .should("contain", "Krantenkoppen")
-      .should("have.css", "font-size", "32px");
+      .should("have.css", "font-size", "54px");
 
     cy.log("articles");
     cy.get("a")
