@@ -1,7 +1,12 @@
 describe("articles saved", () => {
   beforeEach(() => {
-    // make sure there's at least 1 article
-    cy.visit("/articles/dmf20191210_04759850");
+    // make sure at least 1 article has been saved
+    cy.visit("/articles/feed");
+
+    cy.get("a")
+      .first()
+      .click();
+
     cy.get('[data-cy="save_article_form"]').submit();
   });
 
@@ -15,5 +20,6 @@ describe("articles saved", () => {
     cy.get("a")
       .first()
       .click();
+    cy.url().should("contain", "dmf");
   });
 });
