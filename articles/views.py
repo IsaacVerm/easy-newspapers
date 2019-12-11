@@ -1,14 +1,13 @@
 from django.shortcuts import render
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponseRedirect
 from .models import Article
+from django.utils import timezone
 import requests
 import atoma
 
-from django.utils import timezone
-
 
 def index(request):
-    return HttpResponse("Hello, world. You're at the articles index.")
+    return render(request, 'articles/index.html')
 
 
 def feed(request):
