@@ -13,7 +13,8 @@ describe("article detail", () => {
     cy.log("description");
     cy.get("p")
       .should("exist")
-      .should("not.contain", "<P>");
+      .should("not.contain", "<P>")
+      .should("not.contain", "<p>");
   });
   it("go back to articles feed", () => {
     cy.get('[data-cy="feed_hyperlink"]').click();
