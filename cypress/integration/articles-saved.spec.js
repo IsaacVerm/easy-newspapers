@@ -8,15 +8,20 @@ describe("articles saved", () => {
       .click();
 
     cy.get('[data-cy="save_article_form"]').submit();
+
+    cy.visit("/articles/saved");
+  });
+
+  it("open articles saved", () => {
+    cy.get("h1").should("have.css", "font-size", "54px");
+  });
+
+  it("go back to index", () => {
+    cy.get('[data-cy="back_to_index"]').click();
+    cy.url().should("match", /articles\/$/);
   });
 
   it("open article detail", () => {
-    cy.log("title");
-    cy.get("h1")
-      .should("contain", "Opgeslagen artikels")
-      .should("have.css", "font-size", "54px");
-
-    cy.log("article detail");
     cy.get("a")
       .first()
       .click();
