@@ -1,13 +1,22 @@
 describe("article detail", () => {
+  let titleFirstArticleFeed;
+
   beforeEach(() => {
-    // we use a permalink so the test data remains valid
-    cy.visit("/articles/dmf20191210_04759850");
+    cy.visit("/articles/feed");
+    cy.get("a")
+      .first()
+      .then(title => {
+        titleFirstArticleFeed = title.text();
+        cy.get("a")
+          .first()
+          .click();
+      });
   });
 
   it("open article detail", () => {
     cy.log("title");
     cy.get("h1")
-      .should("contain", "Calvo over De Wever")
+      .should("contain", titleFirstArticleFeed)
       .should("have.css", "font-size", "54px");
 
     cy.log("description");
