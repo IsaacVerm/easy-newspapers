@@ -3,7 +3,11 @@
 {% block content %}
     <h1>Wil je nieuwe of opgeslagen artikels bekijken?</h1>
 
-    <a href="feed">nieuwe artikels</a>
+    <button data-cy="go_to_feed" onclick="window.location.href = '/articles/feed';">bekijk nieuwe artikels</button>
     <br>
-    <a href="saved">opgeslagen artikels</a>
+    <br>
+
+    <button data-cy="go_to_saved_articles" onclick="window.location.href = '/articles/saved';">bekijk opgeslagen artikels</button>
+    <br>
+    <br>
 {% endblock %}
