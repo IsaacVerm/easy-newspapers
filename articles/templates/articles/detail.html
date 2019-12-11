@@ -13,7 +13,7 @@
         <input type="hidden" type="text" id="title" name="title" value="{{ article.title }}"/>
         <input type="hidden" type="text" id="description" name="description" value="{{ article.description }}"/>
         <input type="hidden" type="text" id="path" name="path" value="{{ article.path }}"/>
-        <button type="submit">Save your article</button>
+        <button type="submit">Bewaar artikel</button>
     </form>
 
     <form data-cy="mail_article_form" action="/articles/mail" method="post">
@@ -21,7 +21,7 @@
         <input type="hidden" type="text" id="mail_title" name="mail_title" value="{{ article.title }}"/>
         <input type="hidden" type="text" id="mail_description" name="mail_description" value="{{ article.description }}"/>
         <input type="hidden" type="text" id="mail_path" name="mail_path" value="{{ article.path }}"/>
-        <button type="submit">Mail your article</button>
+        <button type="submit">Verstuur artikel per mail</button>
     </form>
 
    
