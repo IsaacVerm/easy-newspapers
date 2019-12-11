@@ -1,10 +1,12 @@
-{% load static %}
-<link rel="stylesheet" type="text/css" href="{% static 'articles/style.css' %}">
+{% extends "articles/base.html" %}
 
-<h1>Krantenkoppen</h1>
+{% block content %}
+    <h1>Krantenkoppen</h1>
 
-{% for article in articles %}
-    <a href='{{article.path}}''>{{ article.title }}</a>
-    <br>
-    <br>
-{% endfor %}
+    {% for article in articles %}
+        <a href='{{article.path}}''>{{ article.title }}</a>
+        <br>
+        <br>
+    {% endfor %}
+{% endblock %}
+

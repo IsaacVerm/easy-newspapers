@@ -1,24 +1,26 @@
-{% load static %}
-<link rel="stylesheet" type="text/css" href="{% static 'articles/style.css' %}">
+{% extends "articles/base.html" %}
 
-<h1>{{ article.title }}</h1>
+{% block content %}
+    <h1>{{ article.title }}</h1>
 
-<p>{{ article.description }}</p>
+    <p>{{ article.description }}</p>
 
-<form data-cy="save_article_form" action="/articles/save" method="post">
-    {% csrf_token %}    
-    <input type="hidden" type="text" id="title" name="title" value="{{ article.title }}"/>
-    <input type="hidden" type="text" id="description" name="description" value="{{ article.description }}"/>
-    <input type="hidden" type="text" id="path" name="path" value="{{ article.path }}"/>
-    <button type="submit">Save your article</button>
-</form>
+    <form data-cy="save_article_form" action="/articles/save" method="post">
+        {% csrf_token %}    
+        <input type="hidden" type="text" id="title" name="title" value="{{ article.title }}"/>
+        <input type="hidden" type="text" id="description" name="description" value="{{ article.description }}"/>
+        <input type="hidden" type="text" id="path" name="path" value="{{ article.path }}"/>
+        <button type="submit">Save your article</button>
+    </form>
 
-<form data-cy="mail_article_form" action="/articles/mail" method="post">
-    {% csrf_token %}    
-    <input type="hidden" type="text" id="mail_title" name="mail_title" value="{{ article.title }}"/>
-    <input type="hidden" type="text" id="mail_description" name="mail_description" value="{{ article.description }}"/>
-    <input type="hidden" type="text" id="mail_path" name="mail_path" value="{{ article.path }}"/>
-    <button type="submit">Mail your article</button>
-</form>
+    <form data-cy="mail_article_form" action="/articles/mail" method="post">
+        {% csrf_token %}    
+        <input type="hidden" type="text" id="mail_title" name="mail_title" value="{{ article.title }}"/>
+        <input type="hidden" type="text" id="mail_description" name="mail_description" value="{{ article.description }}"/>
+        <input type="hidden" type="text" id="mail_path" name="mail_path" value="{{ article.path }}"/>
+        <button type="submit">Mail your article</button>
+    </form>
 
-<a href="feed" data-cy="feed_hyperlink">Go back to articles feed</a>
+    <a href="feed" data-cy="feed_hyperlink">Go back to articles feed</a>
+{% endblock %}
+
